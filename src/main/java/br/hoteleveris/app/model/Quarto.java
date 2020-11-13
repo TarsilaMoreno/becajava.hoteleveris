@@ -16,6 +16,7 @@ public class Quarto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private int noQuarto;
 	private int andar;
 	private String situacao;
@@ -23,9 +24,6 @@ public class Quarto {
 	@ManyToOne
 	@JoinColumn(name = "tipoQuartoId")
 	private TipoQuarto tipoQuarto;
-
-	@ManyToMany(mappedBy = "quarto")
-    Set<Comodidade> comododidade;
 
 	public Long getId() {
 		return id;
@@ -67,14 +65,5 @@ public class Quarto {
 		this.tipoQuarto = tipoQuarto;
 	}
 
-	public Set<Comodidade> getComododidade() {
-		return comododidade;
-	}
 
-	public void setComododidade(Set<Comodidade> comododidade) {
-		this.comododidade = comododidade;
-	}
-	
-}
-	
-	
+}	

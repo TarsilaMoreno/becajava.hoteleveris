@@ -2,7 +2,16 @@ package br.hoteleveris.app.response;
 
 public class ComodidadeResponse extends BaseResponse {
 
+	private Long id;
 	private String nome;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;
@@ -11,6 +20,5 @@ public class ComodidadeResponse extends BaseResponse {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
+
 }

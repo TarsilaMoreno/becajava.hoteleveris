@@ -64,25 +64,23 @@ public class TipoQuartoService {
 
 	}
 	
-	public ListTipoQuartoResponse listar(List<TipoQuartoResponse> tipoQuartoResponse) {
+	public ListTipoQuartoResponse listar() {
 		List<TipoQuarto> lista = _repository.findAll();
 
-		List<TipoQuartoResponse> tipoQuartoResponse1 = new ArrayList<TipoQuartoResponse>();
+		List<TipoQuartoResponse> tipoQuartoResponse = new ArrayList<TipoQuartoResponse>();
+		ListTipoQuartoResponse response = new ListTipoQuartoResponse();
 
+		for(TipoQuarto tipos : lista ) {
+			TipoQuartoResponse quartoResponseList = new TipoQuartoResponse();
 
-		for(TipoQuarto tipoQuarto : lista ) {
-			TipoQuartoResponse tipoQuartoResponseList = new TipoQuartoResponse();
+			quartoResponseList.setDescricao(tipos.getDescricao());
+			quartoResponseList.setValor(tipos.getValor());
+			tipoQuartoResponse.add(quartoResponseList);
 
-			tipoQuartoResponseList.setDescricao(tipoQuarto.getDescricao());
-			tipoQuartoResponseList.setValor(tipoQuarto.getValor());
-			
-
-			TipoQuartoResponse.add(tipoQuartoResponseList);
 		}
 
-		ListTipoQuartoResponse response = new ListTipoQuartoResponse();
 		
-		response.setTipoQuarto(tipoQuartoResponse1);
+		response.setTipoQuarto(tipoQuartoResponse);
 		response.statusCode = 200;
 		response.message = "Tipo de quarto listado com sucesso";
 		return response;

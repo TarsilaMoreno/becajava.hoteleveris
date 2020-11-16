@@ -20,7 +20,7 @@ public class OcupacaoController extends BaseController {
 
 	@Autowired
 	private OcupacaoService service;
-	
+
 	@PostMapping
 	public ResponseEntity inserir(@RequestBody OcupacaoRequest ocupacaoRequest) {
 		try {
@@ -31,15 +31,13 @@ public class OcupacaoController extends BaseController {
 		}
 	}
 
-	@GetMapping(path = "/{id}")
-	public ResponseEntity obter(@PathVariable Long id) {
+	@GetMapping
+	public ResponseEntity listar() {
 		try {
-			OcupacaoResponse response = service.obter(id);
+			BaseResponse response = service.listar();
 			return ResponseEntity.status(response.statusCode).body(response);
 		} catch (Exception e) {
 			return ResponseEntity.status(errorBase.statusCode).body(errorBase);
 		}
 	}
 }
-	
-

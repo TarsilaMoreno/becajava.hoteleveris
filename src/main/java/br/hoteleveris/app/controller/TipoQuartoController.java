@@ -46,9 +46,9 @@ public class TipoQuartoController extends BaseController {
 	@GetMapping(path = "/listar")
 	public ResponseEntity listar() {
 		try {
-			TipoQuartoService _service = service;
-			ListTipoQuartoResponse tipoQuarto = _service.listar(null);
-			return ResponseEntity.status(HttpStatus.OK).body(tipoQuarto);
+			
+			ListTipoQuartoResponse response = service.listar();
+			return ResponseEntity.status(response.statusCode).body(response);
 		} catch (Exception e) {
 			return ResponseEntity.status(errorBase.statusCode).body(errorBase);
 		}

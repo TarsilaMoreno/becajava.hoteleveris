@@ -4,18 +4,14 @@ import java.util.List;
 
 public class ListTipoQuartoResponse extends BaseResponse {
 
-	private List<TipoQuartoResponse> TipoQuarto;
+	private List<TipoQuartoResponse> tipoQuarto;
 
 	public List<TipoQuartoResponse> getTipoQuarto() {
-		return TipoQuarto;
+		return tipoQuarto;
 	}
 
 	public void setTipoQuarto(List<TipoQuartoResponse> tipoQuarto) {
-		tipoQuarto = tipoQuarto;
+		this.tipoQuarto = tipoQuarto;
 	}
 
-	public void setDescricao(Object tipoQuartoResponse) {
-		// TODO Auto-generated method stub
-		
-	}
 }

@@ -15,7 +15,7 @@ public class Ocupacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Date data;
+	private String data;
 	private int qtdDiarias;
 	private String situacao;
 
@@ -35,13 +35,14 @@ public class Ocupacao {
 		this.id = id;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
+
 
 	public int getQtdDiarias() {
 		return qtdDiarias;

@@ -30,4 +30,12 @@ public class TipoQuartoResponse extends BaseResponse {
 		this.valor = valor;
 	}
 
+	public static void add(TipoQuartoResponse tipoQuartoResponseList) {
+
+	}
+
+	public static void add(QuartoResponse quartoResponseList) {
+		
+	}
+
 }

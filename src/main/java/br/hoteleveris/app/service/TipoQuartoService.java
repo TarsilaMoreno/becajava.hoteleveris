@@ -12,6 +12,7 @@ import br.hoteleveris.app.repository.TipoQuartoRepository;
 import br.hoteleveris.app.request.TipoQuartoRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.ClienteResponse;
+import br.hoteleveris.app.response.ListTipoQuartoResponse;
 import br.hoteleveris.app.response.TipoQuartoResponse;
 
 @Service
@@ -62,19 +63,29 @@ public class TipoQuartoService {
 		return response;
 
 	}
+	
+	public ListTipoQuartoResponse listar(List<TipoQuartoResponse> tipoQuartoResponse) {
+		List<TipoQuarto> lista = _repository.findAll();
 
-//	public ListTipoQuartoResponse listar() {
-//	
-//		List<TipoQuarto> lista = _repository.findAll();
-//		
-//		List<TipoQuartoResponse> tipoQuartoResponse = new ArrayList<TipoQuartoResponse>();
-//		
-//		for(TipoQuarto tipoQuarto : lista) {
-//			
-//			TipoQuartoResponse tipoQuartoResponseList = new ClienteResponse();
-//			
-//			tipoQuartoResponseList.setDescricao(tipoQuarto.getDescricao());
-//			tipoQuartoResponseList.setValor(tipoQuarto.getValor());
-//			
+		List<TipoQuartoResponse> tipoQuartoResponse1 = new ArrayList<TipoQuartoResponse>();
+
+
+		for(TipoQuarto tipoQuarto : lista ) {
+			TipoQuartoResponse tipoQuartoResponseList = new TipoQuartoResponse();
+
+			tipoQuartoResponseList.setDescricao(tipoQuarto.getDescricao());
+			tipoQuartoResponseList.setValor(tipoQuarto.getValor());
 			
+
+			TipoQuartoResponse.add(tipoQuartoResponseList);
 		}
+
+		ListTipoQuartoResponse response = new ListTipoQuartoResponse();
+		
+		response.setTipoQuarto(tipoQuartoResponse1);
+		response.statusCode = 200;
+		response.message = "Tipo de quarto listado com sucesso";
+		return response;
+
+	}
+}

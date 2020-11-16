@@ -1,15 +1,20 @@
 package br.hoteleveris.app.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.hoteleveris.app.model.Quarto;
+import br.hoteleveris.app.model.TipoQuarto;
 import br.hoteleveris.app.repository.QuartoRepository;
 import br.hoteleveris.app.request.QuartoRequest;
 import br.hoteleveris.app.response.BaseResponse;
+import br.hoteleveris.app.response.ListTipoQuartoResponse;
 import br.hoteleveris.app.response.QuartoResponse;
+import br.hoteleveris.app.response.TipoQuartoResponse;
 
 @Service
 public class QuartoService {
@@ -65,4 +70,30 @@ public class QuartoService {
 		return response;
 
 	}
+
+// PRECISO REFAZER PARA ACHAR O ERRO
+//	public ListQuartoResponse listar(List<QuartoResponse> quartoResponse) {
+//		List<Quarto> lista = _repository.findAll();
+//
+//		List<QuartoResponse> quartoResponse1 = new ArrayList<QuartoResponse>();
+//
+//		for (Quarto Quarto : lista) {
+//			QuartoResponse QuartoResponseList = new QuartoResponse();
+//
+//			QuartoResponseList.setAndar(Quarto.getAndar());
+//			QuartoResponseList.setNoQuarto(Quarto.getNoQuarto());
+//			QuartoResponseList.setSituacao(Quarto.getSituacao());
+//
+//			TipoQuartoResponse.add(QuartoResponseList);
+//
+//			ListQuartoResponse response = new ListQuartoResponse();
+//
+//			response.setQuarto(quartoResponse1);
+//			response.statusCode = 200;
+//			response.message = "Tipo de quarto listado com sucesso";
+//			return response;
+//
+//		}
+//	
+//	}
 }

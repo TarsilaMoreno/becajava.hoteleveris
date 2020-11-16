@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.hoteleveris.app.request.TipoQuartoRequest;
 import br.hoteleveris.app.response.BaseResponse;
+import br.hoteleveris.app.response.ListTipoQuartoResponse;
 import br.hoteleveris.app.response.TipoQuartoResponse;
 import br.hoteleveris.app.service.TipoQuartoService;
 
@@ -42,14 +43,14 @@ public class TipoQuartoController extends BaseController {
 		}
 	}
 
-//	@GetMapping(path = "/listar")
-//	public ResponseEntity listar() {
-//		try {
-//			ListTipoQuartoResponse tipoQuarto = _service.listar();
-//			return ResponseEntity.status(HttpStatus.OK).body(tipoQuarto);
-//		} catch (Exception e) {
-//			return ResponseEntity.status(errorBase.statusCode).body(errorBase);
-//		}
-//	}
-
+	@GetMapping(path = "/listar")
+	public ResponseEntity listar() {
+		try {
+			TipoQuartoService _service = service;
+			ListTipoQuartoResponse tipoQuarto = _service.listar(null);
+			return ResponseEntity.status(HttpStatus.OK).body(tipoQuarto);
+		} catch (Exception e) {
+			return ResponseEntity.status(errorBase.statusCode).body(errorBase);
+		}
+	}
 }

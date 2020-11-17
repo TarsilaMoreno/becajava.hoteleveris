@@ -5,7 +5,15 @@ public class QuartoRequest {
 	private int noQuarto;
 	private int andar;
 	private String situacao;
-	
+	private Long idTipoQuarto;
+
+	public Long getIdTipoQuarto() {
+		return idTipoQuarto;
+	}
+
+	public void setIdTipoQuarto(Long idTipoQuarto) {
+		this.idTipoQuarto = idTipoQuarto;
+	}
 
 	public int getNoQuarto() {
 		return noQuarto;

@@ -6,9 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 import br.hoteleveris.app.request.QuartoRequest;
 import br.hoteleveris.app.response.BaseResponse;
@@ -45,15 +47,18 @@ public class QuartoController extends BaseController {
 
 		}
 	}
+		@GetMapping(path = "/listar/{id}")
+		public ResponseEntity listar(@PathVariable Long id) {
+			try {
+				
+			ListQuartoResponse response = service.listar(id);
+			return ResponseEntity.status(response.statusCode).body(response);
+			} catch (Exception e) {
+				return ResponseEntity.status(errorBase.statusCode).body(errorBase);
+			}
+			
+		}
+		
+	}
 
-//	@GetMapping(path = "/listar")
-//	public ResponseEntity listar() {
-//		try {
-//			QuartoService _service = service;
-//			ListQuartoResponse tipoQuarto = _service.listar(null);
-//			return ResponseEntity.status(HttpStatus.OK).body(tipoQuarto);
-//		} catch (Exception e) {
-//			return ResponseEntity.status(errorBase.statusCode).body(errorBase);
-//		}
-//	}
-}
+

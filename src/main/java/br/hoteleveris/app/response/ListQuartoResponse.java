@@ -1,11 +1,8 @@
-package br.hoteleveris.app.service;
+package br.hoteleveris.app.response;
 
 import java.util.List;
 
 import br.hoteleveris.app.model.Quarto;
-import br.hoteleveris.app.response.BaseResponse;
-import br.hoteleveris.app.response.QuartoResponse;
-import br.hoteleveris.app.response.TipoQuartoResponse;
 
 public class ListQuartoResponse extends BaseResponse {
 
@@ -19,7 +16,4 @@ public class ListQuartoResponse extends BaseResponse {
 		this.quartos = quartos;
 	}
 
-	
-		
-	}
-
+}

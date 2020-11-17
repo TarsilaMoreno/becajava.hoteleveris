@@ -1,5 +1,6 @@
 package br.hoteleveris.app.model;
 
+import java.util.Optional;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -16,7 +17,7 @@ public class Quarto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private int noQuarto;
 	private int andar;
 	private String situacao;
@@ -65,5 +66,4 @@ public class Quarto {
 		this.tipoQuarto = tipoQuarto;
 	}
 
-
-}	
+}

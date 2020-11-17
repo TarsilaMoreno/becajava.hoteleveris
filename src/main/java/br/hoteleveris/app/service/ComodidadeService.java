@@ -21,7 +21,7 @@ public class ComodidadeService {
 		BaseResponse base = new BaseResponse();
 		base.statusCode = 400;
 
-		if (request.getNome() == "") {
+		if (request.getNome().isEmpty()) {
 			base.message = "Preencha uma comodidade.";
 			return base;
 		}

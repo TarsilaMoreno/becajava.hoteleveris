@@ -24,13 +24,13 @@ public class QuartoService {
 
 	@Autowired
 	private QuartoRepository _repository;
-	
+
 	@Autowired
 	private TipoQuartoRepository tipoQuartoRepository;
 
 	public BaseResponse inserir(QuartoRequest request) {
 		Quarto quarto = new Quarto();
-		
+
 		BaseResponse base = new BaseResponse();
 		base.statusCode = 400;
 
@@ -55,11 +55,7 @@ public class QuartoService {
 		quarto.setAndar(request.getAndar());
 		quarto.setNoQuarto(request.getNoQuarto());
 		quarto.setSituacao(request.getSituacao());
-		
 
-		
-		
-		
 		_repository.save(quarto);
 		base.statusCode = 201;
 		base.message = "Quarto foi inserido com sucesso!";
@@ -91,14 +87,13 @@ public class QuartoService {
 		List<Quarto> lista = _repository.findAll();
 		ListQuartoResponse response = new ListQuartoResponse();
 		List<QuartoResponse> list = new ArrayList<QuartoResponse>();
-		
-		
+
 		for (Quarto quarto : lista) {
 			QuartoResponse quartoResponse = new QuartoResponse();
 
-		if(quarto.getTipoQuarto().getId() == id)	
-			
-			quartoResponse.setAndar(quarto.getAndar());
+			if (quarto.getTipoQuarto().getId() == id)
+
+				quartoResponse.setAndar(quarto.getAndar());
 			quartoResponse.setNoQuarto(quarto.getNoQuarto());
 			quartoResponse.setSituacao(quarto.getSituacao());
 			list.add(quartoResponse);

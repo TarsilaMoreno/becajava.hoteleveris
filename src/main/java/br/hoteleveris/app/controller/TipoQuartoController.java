@@ -14,14 +14,14 @@ import br.hoteleveris.app.request.TipoQuartoRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.ListTipoQuartoResponse;
 import br.hoteleveris.app.response.TipoQuartoResponse;
-import br.hoteleveris.app.service.TipoQuartoService;
+import br.hoteleveris.app.service.imp.TipoQuartoServiceImp;
 
 @RestController
 @RequestMapping("/tipoQuarto")
 public class TipoQuartoController extends BaseController {
 
 	@Autowired
-	private TipoQuartoService service;
+	private TipoQuartoServiceImp service;
 
 	@PostMapping
 	public ResponseEntity inserir(@RequestBody TipoQuartoRequest tipoQuartoRequest) {

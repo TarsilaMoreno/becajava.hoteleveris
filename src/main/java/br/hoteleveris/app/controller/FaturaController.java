@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.hoteleveris.app.service.FaturaService;
+import br.hoteleveris.app.service.imp.FaturaServiceImp;
 
 @RestController
 @RequestMapping("/fatura")
 public class FaturaController {
 
 	@Autowired
-	private FaturaService _service;
+	private FaturaServiceImp _service; 
 
 	@PostMapping
 	public ResponseEntity inserir() {

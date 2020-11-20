@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import br.hoteleveris.app.request.ClienteRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.ClienteResponse;
-import br.hoteleveris.app.service.ClienteService;
+import br.hoteleveris.app.service.imp.ClienteServiceImp;
 
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController extends BaseController {
 
 	@Autowired
-	private ClienteService service;
+	private ClienteServiceImp service;
 
 	@PostMapping
 	public ResponseEntity inserir(@RequestBody ClienteRequest clienteRequest) {

@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import br.hoteleveris.app.request.ComodidadeRequest;
 import br.hoteleveris.app.response.BaseResponse;
 import br.hoteleveris.app.response.ComodidadeResponse;
-import br.hoteleveris.app.service.ComodidadeService;
+import br.hoteleveris.app.service.imp.ComodidadeServiceImp;
 
 @RestController
 @RequestMapping("/comodidade")
 public class ComodidadeController extends BaseController {
 
 	@Autowired
-	private ComodidadeService service;
+	private ComodidadeServiceImp service;
 
 	@PostMapping
 	public ResponseEntity inserir(@RequestBody ComodidadeRequest comodidadeRequest) {

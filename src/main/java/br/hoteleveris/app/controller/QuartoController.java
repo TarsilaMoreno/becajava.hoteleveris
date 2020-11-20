@@ -14,18 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.hoteleveris.app.request.QuartoRequest;
 import br.hoteleveris.app.response.BaseResponse;
+import br.hoteleveris.app.response.ListQuartoResponse;
 import br.hoteleveris.app.response.ListTipoQuartoResponse;
 import br.hoteleveris.app.response.QuartoResponse;
-import br.hoteleveris.app.service.ListQuartoResponse;
-import br.hoteleveris.app.service.QuartoService;
-import br.hoteleveris.app.service.TipoQuartoService;
+import br.hoteleveris.app.service.imp.QuartoServiceImp;
+import br.hoteleveris.app.service.imp.TipoQuartoServiceImp;
 
 @RestController
 @RequestMapping("/quarto")
 public class QuartoController extends BaseController {
 
 	@Autowired
-	private QuartoService service;
+	private QuartoServiceImp service;
 
 	@PostMapping
 	public ResponseEntity inserir(@RequestBody QuartoRequest quartoRequest) {
